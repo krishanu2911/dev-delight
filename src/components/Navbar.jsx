@@ -3,23 +3,15 @@ import {
     Flex,
     Text,
     IconButton,
-    Button,
     Stack,
     Collapse,
-    Icon,
     Link,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
     useColorModeValue,
-    useBreakpointValue,
     useDisclosure,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
     CloseIcon,
-    ChevronDownIcon,
-    ChevronRightIcon,
   } from '@chakra-ui/icons';
   import herogif from "../assets/hero.gif"
   
@@ -52,6 +44,7 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} alignItems={{base: "center"}}>
+            <Link href='/'>
             <Flex justifyContent={"center"} alignItems={"center"} gap={"2"} >
             <img style={{
                 height: "5rem",
@@ -59,6 +52,7 @@ import {
             }} src={herogif}  alt="Logo"/>  
             <Text>Dev Delight</Text>
             </Flex>
+            </Link>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
