@@ -1,14 +1,9 @@
 import React from "react";
 import {
-  Avatar,
   Box,
   chakra,
-  Container,
   Flex,
-  Icon,
   Image,
-  SimpleGrid,
-  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -134,14 +129,7 @@ const EyeCare = () => {
       {testimonials.map((cardInfo, index) => (
           <TestimonialCard {...cardInfo} index={index} />
         ))}
-        {/* <Text fontSize={"lg"}>Every 20 minutes you spend looking at the screen look 20 feet away for 20 seconds.</Text> */}
-        {/* <Image src={Binoculars} alt={"Binoculars"} /> */}
       </Flex>
-      {/* <Flex gap={"2rem"} flexWrap={"wrap"} justifyContent={"center"}>
-        {testimonials.map((cardInfo, index) => (
-          <TestimonialCard {...cardInfo} index={index} />
-        ))}
-      </Flex> */}
     </Flex>
   );
 };
