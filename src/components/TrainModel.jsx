@@ -98,7 +98,7 @@ const TrainModel = () => {
           }}
         >
           <Button onClick={classifyPic}>Test Now</Button>
-          <Text>{postureStatus}</Text>
+          <Text fontSize={"lg"} fontWeight={"bold"}>{postureStatus}</Text>
         </div>
       ) : (
         <div
