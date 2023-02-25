@@ -35,11 +35,8 @@ const TrainModel = () => {
   const trainPosture = async (postureType) => {
     setSavingPosture({ loadingState: true, posture: postureType });
     let img = camRef.current.video;
-    console.log("hellllo")
-    // Notification
+
     let mobilenet = await mobilenetModule.load();
-    console.log(mobilenet)
-    console.log("hiiiii")
     let activation = mobilenet.infer(img, true);
     classifier.addExample(activation, postureType);
     setSavingPosture({ loadingState: false, posture: "" });
@@ -54,7 +51,6 @@ const TrainModel = () => {
     let dataset = classifier.getClassifierDataset();
 
     let dataInObject = await convertDatasetToObject(dataset);
-    console.log(dataInObject);
     let jsonInStr = JSON.stringify(dataInObject);
     localStorage.setItem("postureDataset", jsonInStr);
     setSavingModel(false);
@@ -64,7 +60,7 @@ const TrainModel = () => {
     setPostureStatus("finding if your posture is correct");
     let net = await mobilenetModule.load();
     const img = camRef.current.video;
-    // Get the activation from mobilenet from the webcam.
+
     const activation = net.infer(img, true);
     const result = await classifier.predictClass(activation);
 
